@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -17,6 +18,7 @@ import javax.net.ssl.HttpsURLConnection;
 public class MainActivity extends AppCompatActivity {
 
     private TextView resultadoTextview;
+    private Spinner listaCismos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +26,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         resultadoTextview = findViewById(R.id.teluricoTextView);
+        listaCismos = findViewById(R.id.spinner_cismos);
+
         new HttGetRequest().execute();
     }
      private class HttGetRequest extends AsyncTask<Void, Void, String>{
